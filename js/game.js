@@ -1,5 +1,5 @@
 // Donation link. Leave '' to hide the Support button entirely; set to e.g. 'https://ko-fi.com/yourname' to show it.
-const SUPPORT_URL = '';
+const SUPPORT_URL = 'https://ko-fi.com/freedom222';
 function supportBtn(){if(!/^https?:\/\//i.test(SUPPORT_URL))return '';const u=SUPPORT_URL.replace(/[&"<>]/g,c=>({'&':'&amp;','"':'&quot;','<':'&lt;','>':'&gt;'})[c]);return `<div class="support"><a class="supportBtn" id="bSupport" href="${u}" target="_blank" rel="noopener noreferrer">☕ Support the game</a></div>`;}
 (()=>{
 const GAME='Starlaunch Sprint',cv=document.getElementById('game'),c=cv.getContext('2d'),W=960,H=544,ov=document.getElementById('overlay');
