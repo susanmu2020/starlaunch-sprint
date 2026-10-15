@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Starlaunch Sprint</title>
+<meta name="description" content="Starlaunch Sprint: a free retro side-scrolling platformer. Pick or build your hero, stomp bots, grab jetpacks and blast off from the launch pad!">
+<meta property="og:title" content="Starlaunch Sprint">
+<meta property="og:description" content="Run, jump, jetpack and stomp your way to the launch pad in this original retro platformer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://susanmu2020.github.io/starlaunch-sprint/">
+<meta name="theme-color" content="#1b1440">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div id="wrap">
+  <canvas id="game" width="960" height="544"></canvas>
+  <div id="hud" class="hidden"><span id="hName"></span><span id="hScore"></span><span id="hCoins"></span><span id="hLives"></span><span id="hLevel"></span><span id="hTime"></span><span id="hPow"></span></div>
+  <div id="topbtns"><button id="muteBtn" title="Mute (M)">🔊</button><button id="pauseBtn" title="Pause (P)">⏸</button></div>
+  <div id="overlay"></div>
+  <div id="touch" class="hidden">
+    <div class="tl"><button data-k="left">◀</button><button data-k="right">▶</button></div>
+    <div class="tr"><button data-k="action">⚡</button><button data-k="jump">⤒</button></div>
+  </div>
+</div>
+<footer>Starlaunch Sprint is an original game with original characters. Not affiliated with, endorsed, or sponsored by Nintendo or any other company. No ads, no tracking. Online Team Race connects devices directly via WebRTC using a public signaling server; no accounts or data stored. Arrows/WASD + Space · Shift/X run · P pause · M mute</footer>
+<script src="js/audio.js"></script>
+<script src="js/art.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/peerjs.min.js"></script>
+<script src="js/team.js"></script>
+<script src="js/game.js"></script>
+</body></html>
