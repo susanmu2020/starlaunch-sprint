@@ -36,4 +36,4 @@ At the very top of `js/game.js` there is a single constant:
 const SUPPORT_URL = '';
 ```
 
-Leave it empty and no Support button is shown anywhere. Set it to your donation page (must start with `http://` or `https://`), e.g. `const SUPPORT_URL = 'https://ko-fi.com/yourname';`, and a small "☕ Support the game" link appears on the title screen, the win screen, the Team Race final results and the Top 10 leaderboard. It opens in a new tab (`rel="noopener"`) and never interrupts gameplay.
+Leave it empty and no Support button is shown anywhere. Set it to your donation page (must start with `http://` or `https://`), e.g. `const SUPPORT_URL = 'https://ko-fi.com/yourname';`, and a small "❤️ Support the game" link appears on the title screen, the win screen, the Team Race final results and the Top 10 leaderboard. It opens in a new tab (`rel="noopener"`) and never interrupts gameplay.
