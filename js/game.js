@@ -1,3 +1,6 @@
+// Donation link. Leave '' to hide the Support button entirely; set to e.g. 'https://ko-fi.com/yourname' to show it.
+const SUPPORT_URL = '';
+function supportBtn(){if(!/^https?:\/\//i.test(SUPPORT_URL))return '';const u=SUPPORT_URL.replace(/[&"<>]/g,c=>({'&':'&amp;','"':'&quot;','<':'&lt;','>':'&gt;'})[c]);return `<div class="support"><a class="supportBtn" id="bSupport" href="${u}" target="_blank" rel="noopener noreferrer">☕ Support the game</a></div>`;}
 (()=>{
 const GAME='Starlaunch Sprint',cv=document.getElementById('game'),c=cv.getContext('2d'),W=960,H=544,ov=document.getElementById('overlay');
 const $=id=>document.getElementById(id),SOLID='#=B?US';
@@ -25,7 +28,7 @@ const esc=s=>String(s).replace(/[&<>"']/g,m=>'&#'+m.charCodeAt(0)+';');
 function showTitle(){state='title';setPlayUI(false);Sound.music(false);
  panel(`<h1>STARLAUNCH SPRINT</h1><p>Run, stomp &amp; jetpack your way to the launch pad!</p><p>Hero: <b>${esc(hero.name)}</b></p>
  <button class="btn" id="bPlay">▶ Play</button><button class="btn sec" id="bChar">Choose Hero</button><br><button class="btn" id="bTeam">👥 Team Race 2v2</button><button class="btn sec" id="bTop">🏆 Top 10</button><br>${unlocked>1?'<button class="btn sec" id="bLv">Level Select</button>':''}
- <p style="font-size:13px;opacity:.8">Arrows/WASD move · Space/Up jump (hold = higher) · Shift/X run &amp; boost</p><p style="font-size:11px;opacity:.75;max-width:520px;margin:8px auto 0">Starlaunch Sprint is an original game with original characters. Not affiliated with, endorsed, or sponsored by Nintendo or any other company.</p>`);
+ <p style="font-size:13px;opacity:.8">Arrows/WASD move · Space/Up jump (hold = higher) · Shift/X run &amp; boost</p><p style="font-size:11px;opacity:.75;max-width:520px;margin:8px auto 0">Starlaunch Sprint is an original game with original characters. Not affiliated with, endorsed, or sponsored by Nintendo or any other company.</p>${supportBtn()}`);
  $('bPlay').onclick=()=>startGame(0);$('bTeam').onclick=Team.menu;$('bTop').onclick=Team.showTop;$('bChar').onclick=showSelect;if($('bLv'))$('bLv').onclick=showLevels;}
 let previews=[];
 function showSelect(){state='select';setPlayUI(false);
@@ -135,7 +138,7 @@ function levelDone(){if(lvl===3){win();return;}unlocked=Math.max(unlocked,lvl+2)
  panel(`<h2>World ${lvl+1} cleared! 🚀</h2><p>Score: <b>${score}</b> · Coins: ${coins}</p><button class="btn" id="bNext">Next world ▶</button><button class="btn sec" id="bT">Title</button>`);
  $('bNext').onclick=()=>startLevel(lvl+1);$('bT').onclick=showTitle;}
 function win(){state='win';setPlayUI(false);Sound.music(false);unlocked=4;localStorage.setItem('ss_unlocked',4);const best=Math.max(score,+localStorage.getItem('ss_best')||0);localStorage.setItem('ss_best',best);
- panel(`<h1>YOU WIN!</h1><p>${esc(hero.name)} blasted off to the stars!</p><p>Final score: <b>${score}</b> (best ${best})</p><button class="btn" id="bShare">📣 Share</button><button class="btn sec" id="bAgain">Play again</button>`);
+ panel(`<h1>YOU WIN!</h1><p>${esc(hero.name)} blasted off to the stars!</p><p>Final score: <b>${score}</b> (best ${best})</p><button class="btn" id="bShare">📣 Share</button><button class="btn sec" id="bAgain">Play again</button>${supportBtn()}`);
  $('bShare').onclick=e=>share(e.target);$('bAgain').onclick=showTitle;}
 function gameOver(){state='over';setPlayUI(false);Sound.music(false);panel(`<h1>GAME OVER</h1><p>Score: <b>${score}</b></p><button class="btn" id="bRetry">Retry world ${lvl+1}</button><button class="btn sec" id="bT">Title</button>`);
  $('bRetry').onclick=()=>startGame(lvl);$('bT').onclick=showTitle;}

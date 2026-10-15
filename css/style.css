@@ -37,3 +37,4 @@ table.lb td{padding:3px 8px;border-bottom:1px solid #ffffff22}table.lb tbody tr{
 table.lb tr.meRow{background:#ffd44722}.tag{padding:2px 8px;border-radius:10px;font-weight:bold;font-size:12px}
 @keyframes rowin{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
 .teams{display:flex;gap:30px;justify-content:center;margin:10px 0;font-size:18px}
+.support{margin-top:10px}.supportBtn{pointer-events:auto;display:inline-block;font-size:13px;padding:5px 12px;border-radius:999px;color:#ffe9b0;background:rgba(255,212,71,.12);border:1px solid rgba(255,212,71,.45);text-decoration:none;opacity:.85}.supportBtn:hover,.supportBtn:focus{opacity:1;background:rgba(255,212,71,.25);outline:none}

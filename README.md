@@ -27,3 +27,13 @@ Controls on each device: Arrows/WASD move, Space/Up/W jump, Shift/X run (or on-s
 
 ### Privacy
 Online play connects the two devices directly with WebRTC (peer-to-peer) via the bundled PeerJS library (`js/peerjs.min.js`, MIT) and the free public PeerJS signaling server plus Google STUN to find each other. No accounts; no game data is stored on any server. High scores stay in your browser's localStorage.
+
+## Support button (optional)
+
+At the very top of `js/game.js` there is a single constant:
+
+```js
+const SUPPORT_URL = '';
+```
+
+Leave it empty and no Support button is shown anywhere. Set it to your donation page (must start with `http://` or `https://`), e.g. `const SUPPORT_URL = 'https://ko-fi.com/yourname';`, and a small "☕ Support the game" link appears on the title screen, the win screen, the Team Race final results and the Top 10 leaderboard. It opens in a new tab (`rel="noopener"`) and never interrupts gameplay.
